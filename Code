@@ -1,0 +1,16 @@
+import pygame
+pygame.init() #initialises pygame modules
+dis = pygame.display.set_mode((400, 300)) #creates the game screen
+pygame.display.set_caption(("Cassie's snake game."))#text in the top bar
+blue = (0,0,255) #intitialise a colour named blue using RGB scale
+red = (255,0,0)  #intitialise a colour named red using RGB scale
+game_over = False #initialise game over to false
+while not game_over:  #while the person hasn't tried to exit the game
+    for event in pygame.event.get():  #get what the person has done
+        if event.type == pygame.QUIT: #if they have pushed the x then
+            game_over = True  #pop out of the while loop and run the program quit lines below
+    pygame.draw.rect(dis, blue, [200, 150, 10, 10]) #draw a rectangle on our dis display, colour it blue, left and top position of rectabngle and width and height
+    pygame.display.update() #update display
+
+pygame.quit() #end the game
+quit()#uninitialize everything
